@@ -13,4 +13,4 @@ As an editor, I recommend Eclipse with the TeXlipse plugin:
 * [Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/)
 * [TeXlipse](http://texlipse.sourceforge.net/) plugin
 
-For more such recommendations, see my (website's links)[http://nlp.chrisfournier.ca/links/].
+For more such recommendations, see my [website's links](http://nlp.chrisfournier.ca/links/).
