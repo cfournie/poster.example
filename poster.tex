@@ -1,0 +1,81 @@
+\documentclass[custom,plainsections,30pt]{sciposter}
+
+% Define metadata
+\newcommand{\pdfauthors}{Chris Fournier}
+\newcommand{\pdftitle}{An Example LaTeX poster}
+\newcommand{\pdfemail}{cfour037@eecs.uottawa.ca}
+\newcommand{\pdfinstitute}{School of Electrical Engineering and Computer Science\\
+University of Ottawa}
+
+% Include packages
+\usepackage[pdftex]{graphicx}
+\usepackage{tabulary}	% Fancy table column types
+\usepackage{amsmath}	% More math 
+\usepackage{amsfonts}	% Math fonts
+\usepackage{mathtools}	% Math display tools
+\usepackage{cases}		% Cases in math
+\usepackage{glossaries} % Adds glossaries support; required for some captioning
+\usepackage{multirow}	% Multiple table rows
+\usepackage{multicol}	% Multiple table columns
+\usepackage{comment}	% Comment out sections
+\usepackage{color}		% Add colour support
+\usepackage[table, x11names, rgb]{xcolor} % Add table colour support, colour names, and rgb specification of colours
+\usepackage{soul}		% Highlighting support
+\usepackage[normalem]{ulem}	% Underlining support
+\usepackage{natbib}		% Better citation styles
+\usepackage{caption}
+\usepackage{tikz}		% Diagram and drawing library
+\usepackage{tikz-qtree}	% Draw trees
+\usepackage{pgfplots}	% Charts, requires tikz first
+\usepackage{sectsty}	% Set font styles to headings
+% Add a variety of tikz packages for drawing
+\usetikzlibrary{arrows,automata,shapes}
+
+% Set headings to arial
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}\selectfont\centering}
+
+% Set PDF metadata
+\usepackage[pdfauthor={\pdfauthors},%
+pdftitle={\pdftitle},%
+pagebackref=false,%
+pdfborder=0 0 0,
+pdftex]{hyperref}
+
+% Colour hyperlinks black so that they appear to be normal text
+\hypersetup{ 
+colorlinks,% 
+citecolor=black,%
+filecolor=black,% 
+linkcolor=black,% 
+urlcolor=black
+}
+
+% Remove ruler between columns in multicol
+\setlength{\columnseprule}{0pt}
+
+
+% Include the title page setup
+\input{title}
+
+% Create a 3 column poster
+\begin{document}
+\maketitle
+\begin{multicols*}{3} % Use a 3 column poster format
+
+% Set the paragraph indent
+\setlength{\parindent}{2em}
+
+% Include various section files
+\input{section_introduction}
+\input{section_motivation}
+\input{section_body}
+\input{section_conclusion}
+
+% Setup the bibliography
+\begin{small}
+\bibliographystyle{agsm} % Harvard = agsm
+\bibliography{src/bib/manuals,src/bib/packages,src/bib/examples}
+\end{small}
+
+\end{multicols*}
+\end{document}
